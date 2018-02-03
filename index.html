@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SLOWLY</title>
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+   <hr>
+          <h2> Which content do you<br/> want to see? </h2>
+    <hr>
+    <!--- maincontent--->
+    <div class="container-fluid">
+              <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                       <div class="thumbnail">
+                          <img class="img-thumbnail" src="images/p.png"  alt=""/>
+                        <h3>-> E-MAIL <-</h3>
+                       </div>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                       <div class="thumbnail">
+                           <img class="img-thumbnail" src="images/p1.png"  alt=""/>
+                            <h3>-> MUSIC <-</h3>
+                        </div>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <div class="thumbnail">
+                      <img class="img-thumbnail" src="images/p2.png"  alt=""/>
+                        <h3>-> VIDEO <-</h3>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <div class="thumbnail">
+                      <img class="img-thumbnail" src="images/p3.png"  alt=""/>
+                        <h3>->  SOCIAL <-</h3>
+                    </div>
+                  </div> 
+               </div>
+             <div class="btn-group btn-group-justified" role="group" aria-label="more">
+                 <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" value="go" onclick="location.href='http://www.google.it'"> 
+                        <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+                       &nbsp; DISCOVER MORE
+                       </button>
+                  </div> 
+            </div>
+        </div>     
+
+     <!--- alert--->   
+    <div class="panel panel-default" id="alert"> 
+        <div class="panel-body">
+              <img src="images/slow.gif"  alt=""/>
+         </div>
+         <div class="panel-body">
+               The page is still loading because the Content Provider  does not pay enough money to your ISP to make the content upload faster
+          </div>
+          <div class="panel-body">
+             <input type="reset" value="CLOSE" class="sub"  id="close" />
+          </div>
+    </div>    
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+ 
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+     <script type="text/javascript">
+            var myAlert = document.getElementById("alert");
+            var reg = document.getElementsByClassName("thumbnail");
+            var mClose = document.getElementById("close");
+            for(var i=0;i<reg.length;i++ ){
+            reg[i].onclick = function() {
+                myAlert.style.display = "block";
+                myAlert.style.position = "absolute";
+                myAlert.style.top = "20%";
+                myAlert.style.left = "12%";
+                mybg = document.createElement("div");
+                mybg.setAttribute("id","mybg");
+                mybg.style.background = "#000";
+                mybg.style.width = "100%";
+                mybg.style.height = "200%";
+                mybg.style.position = "absolute";
+                mybg.style.top = "0";
+                mybg.style.left = "0";
+                mybg.style.zIndex = "500";
+                mybg.style.opacity = "0.5";
+                mybg.style.filter = "Alpha(opacity=30)";
+                document.body.appendChild(mybg);
+                document.body.style.overflow = "hidden";
+            }
+            }
+            
+            mClose.onclick = function()
+            {
+                myAlert.style.display = "none";
+                mybg.style.display = "none";
+            }
+        </script>
+
+  </body>
+</html>
